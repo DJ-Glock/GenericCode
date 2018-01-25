@@ -12,19 +12,15 @@ import UIKit
 extension UIViewController {
     /// Function for presenting AlertViewController with fixed colors for iOS 9
     func presentAlert(alert: UIAlertController, animated flag: Bool, completion: (() -> Swift.Void)? = nil){
-        // Temporary change global colors for iOS 9
-        if UIDevice.current.systemVersion.range(of: "9.") != nil {
-            UIView.appearance().tintColor = ColorThemes.alertViewButtonTextColor
-            UIApplication.shared.keyWindow?.tintColor = ColorThemes.alertViewButtonTextColor
-        }
+        // Temporary change global colors
+        UIView.appearance().tintColor = ColorThemes.alertViewButtonTextColor
+        UIApplication.shared.keyWindow?.tintColor = ColorThemes.alertViewButtonTextColor
         
         //Present the controller
         self.present(alert, animated: flag, completion: {
-            // Rollback change global colors for iOS 9
-            if UIDevice.current.systemVersion.range(of: "9.") != nil {
-                UIView.appearance().tintColor = ColorThemes.tintColor
-                UIApplication.shared.keyWindow?.tintColor = ColorThemes.tintColor
-            }
+            // Rollback change global colors
+            UIView.appearance().tintColor = ColorThemes.tintColor
+            UIApplication.shared.keyWindow?.tintColor = ColorThemes.tintColor
             if completion != nil {
                 completion!()
             }
@@ -55,4 +51,5 @@ extension UIViewController {
         }
     }
 }
+
 
