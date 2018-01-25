@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    /// Function for presenting AlertViewController with fixed colors for iOS 9
+    /// Function for presenting AlertViewController with fixed colors for iOS 9-11
     func presentAlert(alert: UIAlertController, animated flag: Bool, completion: (() -> Swift.Void)? = nil){
         // Temporary change global colors
         UIView.appearance().tintColor = ColorThemes.alertViewButtonTextColor
